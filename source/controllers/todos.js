@@ -8,9 +8,9 @@ export function mainPage(req, res) {
 }
 
 export function addShipNew(req, res) {
-  res.render('add', {
+  res.render('addShip', {
     todos: getList(),
-    title:'Добавление теплохода!'
+    title:'Добавление теплохода'
   });
 }
 
@@ -25,4 +25,15 @@ export function addShip(req, res) {
   }
   addItemShip(todo);
   res.redirect('/')
+}
+
+export function addMotorNew(req, res) {
+  res.render('addMotor', {
+    todos: getList(),
+    title:'Добавление двигателя'
+  });
+}
+
+export function addMotor(req, res) {
+  console.log(2)
 }

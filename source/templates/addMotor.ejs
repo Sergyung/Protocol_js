@@ -1,17 +1,16 @@
 <%- include('includes/header.ejs') %>
  
-    
       <section class="content">
         <div class="conteiner">
           <div class="content-box">
             <div class="content-main">
-              <h2>Добавить теплоход</h2>
-              <form action="/addShip" method="post">
+              <h2>Добавить двигатель</h2>
+              <form action="/addMotor" method="post">
                 <div class="dataEntry">
                 <h3>Введите судовладельца</h3>
                   <select name="owner">
                     <% for(let t of todos) { %>
-                      <option><%= t.title %></option>
+                      <option value="<%= t._id %>"><%= t.title %></option>
                     <% } %>
                   </select>
                   <span class="onwer-plus">+</span>
@@ -30,7 +29,7 @@
                 </div>
                 <div class="dataEntry">
                   <h3>Введите регистрационный номер</h3>
-                  <input name="numberShip" />
+                  <input name="numberShip" value="0">
                 </div>
                 <div class="dataEntry">
                   <h3>Введите проект теплохода</h3>
@@ -51,9 +50,10 @@
                   </div>
                 </div>
                 <div class="entry-btn">
-                  <button class="btn btn-primary">
+                  <input type="submit" value="Добавить">
+                  <!-- <button class="btn btn-primary">
                     <span class="entry-btn__text">Добавить</span>
-                  </button>
+                  </button> -->
                 </div>
               </form>
             </div>
