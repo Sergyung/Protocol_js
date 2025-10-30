@@ -1,0 +1,65 @@
+<%- include('includes/header.ejs') %>
+ 
+    
+      <section class="content">
+        <div class="conteiner">
+          <div class="content-box">
+            <div class="content-main">
+              <h2>Добавить теплоход</h2>
+              <form>
+                <div class="dataEntry">
+                <h3>Введите судовладельца</h3>
+                  <select name="owner">
+                    <% for(let t of todos) { %>
+                      <option><%= t.title %></option>
+                    <% } %>
+                  </select>
+                  <span class="onwer-plus">+</span>
+                </div>
+                
+                <!-- <div class="dataEntry">
+                  <h3>Введите выбирете филиал</h3>
+                  <select name="branch">
+                    <option>Нет</option>
+                    <option>СРВП</option>
+                  </select>
+                </div> -->
+                <div class="dataEntry">
+                  <h3>Введите название теплохода</h3>
+                  <input name="nameShip" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Введите регистрационный номер</h3>
+                  <input name="numberShip" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Введите проект теплохода</h3>
+                  <input name="projectShip" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Количество двигателей</h3>
+                  <span class="allMotor">Всего:</span><span id="allMotor">0</span> 
+                </div>
+                <div class="dataEntry">
+                  <h3>Главных</h3>
+                  <div class="motor">
+                    <input name="gd" type="number" min="0" max="2" value="0" class="gd">
+                  </div>
+                  <h3>Вспомогательных</h3>
+                  <div class="motor">
+                    <input name="dg" type="number" min="0" max="3" value="0" class="dg">
+                  </div>
+                </div>
+                <div class="entry-btn">
+                  <button class="btn btn-primary">
+                    <span class="entry-btn__text">Добавить</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+<%- include('includes/footer.ejs') %>    
