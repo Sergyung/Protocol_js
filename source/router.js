@@ -12,7 +12,7 @@ router.use(methodOverride('_method'))
 router.get('/addShip', addShipNew);
 router.post('/addShip', addShip);
 router.get('/addMotor', addMotorNew);
-router.post('addMotor', addMotor);
+router.post('/addMotor', addMotor);
 router.get('/', mainPage);
 
 export default router;
