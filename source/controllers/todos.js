@@ -1,5 +1,6 @@
 import { getList } from "../models/todos.js";
-import { addItemShip } from "../models/ships.js";
+import { addItemShip, getListShip } from "../models/ships.js";
+import { addItemMotor } from "../models/motors.js";
 
 export function mainPage(req, res) {
   res.render('main', {
@@ -15,7 +16,7 @@ export function addShipNew(req, res) {
 }
 
 export function addShip(req, res) {
-  const todo = {
+  const ship = {
     owner: req.body.owner,
     nameShip: req.body.nameShip,
     numberShip: req.body.numberShip,
@@ -23,17 +24,20 @@ export function addShip(req, res) {
     gdShip: req.body.gd,
     dgShip: req.body.dg
   }
-  addItemShip(todo);
+  addItemShip(ship);
   res.redirect('/')
 }
 
 export function addMotorNew(req, res) {
   res.render('addMotor', {
     todos: getList(),
+    ships: getListShip(),
     title:'Добавление двигателя'
   });
 }
 
 export function addMotor(req, res) {
-  console.log(2)
+  const motor = {}
+  addItemShip(motor);
+  res.redirect('/')
 }
