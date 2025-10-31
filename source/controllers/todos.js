@@ -37,7 +37,28 @@ export function addMotorNew(req, res) {
 }
 
 export function addMotor(req, res) {
-  const motor = {}
-  addItemShip(motor);
+  const motor = {
+    shipId: req.body.shipId,
+    modelMotor: req.body.modelMotor,
+    numberMotor: req.body.numberMotor,
+    yearMotor: req.body.yearMotor,
+    yearRepair: req.body.yearRepair || "",
+    factoryMotor: req.body.factoryMotor,
+    purposeMotor: req.body.purposeMotor,
+    locationMotor: req.body.locationMotor,
+    timeMotor: req.body.timeMotor,
+    powerMotor: req.body.powerMotor,
+    speedMotor: req.body.speedMotor,
+    fuelFlow: req.body.fuelFlow,
+    numberCylinders: req.body.numberCylinders,
+    cylinderPosition: req.body.cylinderPosition,
+    diametrCylinder: req.body.diametrCylinder,
+    pistonStroke: req.body.pistonStroke,
+    ratioCompress: req.body.ratioCompress,
+    injectionAngle: req.body.injectionAngle,
+    boost: req.body.boost,
+    pressure: req.body.pressure
+  }
+  addItemMotor(motor);
   res.redirect('/')
 }

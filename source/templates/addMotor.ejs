@@ -16,7 +16,7 @@
                 </div>
                 <div class="dataEntry">
                   <h3>Выбирете теплоход</h3>
-                  <select name="branch">
+                  <select name="shipId">
                     <% for(let s of ships) { %>
                       <option value="<%= s._id %>"><%= s.nameShip %></option>
                     <% } %>
@@ -36,22 +36,30 @@
                 </div>
                 <div class="dataEntry">
                   <h3>Год капремонта</h3>
-                  <input name="yearMotor" />
+                  <input name="yearRepair" />
                 </div>
                 <div class="dataEntry">
                   <h3>Завод изготовитель</h3>
                   <input name="factoryMotor" />
                 </div>
                 <div class="dataEntry">
-                  <h3>Выбирете теплоход</h3>
-                  <select name="branch">
+                  <h3>Назначеие двигателя</h3>
+                  <select name="purposeMotor">
                     <option value="gd">Главный</option>
                     <option value="dg">Вспомогательный</option>
                   </select>
                 </div>
                 <div class="dataEntry">
+                  <h3>Расположение двигателя</h3>
+                  <select name="locationMotor">
+                    <option value="c">Центральное</option>
+                    <option value="l">Левое</option>
+                    <option value="p">Правое</option>
+                  </select>
+                </div>
+                <div class="dataEntry">
                   <h3>Наработка до капремонта</h3>
-                  <input name="factoryMotor" />
+                  <input name="timeMotor" />
                 </div>
                 <div class="dataEntry">
                   <h3>Номинальная мощность, кВт</h3>
@@ -59,7 +67,7 @@
                 </div>
                 <div class="dataEntry">
                   <h3>Число оборотов, об/мин</h3>
-                  <input name="powerMotor" />
+                  <input name="speedMotor" />
                 </div>
                 <div class="dataEntry">
                   <h3>Расход топлива, кг/ч</h3>
@@ -78,30 +86,30 @@
                 </div>
                 <div class="dataEntry">
                   <h3>Диаметр цилиндра, мм</h3>
-                  <input name="powerMotor" />
+                  <input name="diametrCylinder" />
                 </div>
                 <div class="dataEntry">
                   <h3>Ход поршня, мм</h3>
-                  <input name="powerMotor" />
+                  <input name="pistonStroke" />
                 </div>
                 <div class="dataEntry">
                   <h3>Степень сжатия</h3>
-                  <input name="powerMotor" />
+                  <input name="ratioCompress" />
                 </div>
                 <div class="dataEntry">
                   <h3>Угол впрыска</h3>
-                  <input name="powerMotor" />
+                  <input name="injectionAngle" />
                 </div>
                 <div class="dataEntry">
                   <h3>Способ наддува</h3>
-                  <select name="branch">
+                  <select name="boost">
                     <option value="b">без наддува</option>
                     <option value="t">турбонаддув</option>
                   </select>
                 </div>
                 <div class="dataEntry">
                   <h3>Ср. эффект. давление</h3>
-                  <input name="powerMotor" />
+                  <input name="pressure" />
                 </div>
                 <div class="entry-btn">
                   <input type="submit" value="Добавить">
