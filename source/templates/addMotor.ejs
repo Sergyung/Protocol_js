@@ -7,53 +7,104 @@
               <h2>Добавить двигатель</h2>
               <form action="/addMotor" method="post">
                 <div class="dataEntry">
-                <h3>Введите судовладельца</h3>
+                <h3>Выбирете судовладельца</h3>
                   <select name="owner">
                     <% for(let t of todos) { %>
                       <option value="<%= t._id %>"><%= t.title %></option>
                     <% } %>
                   </select>
-                  <span class="onwer-plus">+</span>
                 </div>
-                
-                <!-- <div class="dataEntry">
-                  <h3>Введите выбирете филиал</h3>
+                <div class="dataEntry">
+                  <h3>Выбирете теплоход</h3>
                   <select name="branch">
-                    <option>Нет</option>
-                    <option>СРВП</option>
+                    <% for(let s of ships) { %>
+                      <option value="<%= s._id %>"><%= s.nameShip %></option>
+                    <% } %>
                   </select>
-                </div> -->
-                <div class="dataEntry">
-                  <h3>Введите название теплохода</h3>
-                  <input name="nameShip" />
                 </div>
                 <div class="dataEntry">
-                  <h3>Введите регистрационный номер</h3>
-                  <input name="numberShip" value="0">
+                  <h3>Марка двигателя</h3>
+                  <input name="modelMotor" />
                 </div>
                 <div class="dataEntry">
-                  <h3>Введите проект теплохода</h3>
-                  <input name="projectShip" />
+                  <h3>Номер двигателя</h3>
+                  <input name="numberMotor">
                 </div>
                 <div class="dataEntry">
-                  <h3>Количество двигателей</h3>
-                  <span class="allMotor">Всего:</span><span id="allMotor">0</span> 
+                  <h3>Год выпуска</h3>
+                  <input name="yearMotor" />
                 </div>
                 <div class="dataEntry">
-                  <h3>Главных</h3>
-                  <div class="motor">
-                    <input name="gd" type="number" min="0" max="2" value="0" class="gd">
-                  </div>
-                  <h3>Вспомогательных</h3>
-                  <div class="motor">
-                    <input name="dg" type="number" min="0" max="3" value="0" class="dg">
-                  </div>
+                  <h3>Год капремонта</h3>
+                  <input name="yearMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Завод изготовитель</h3>
+                  <input name="factoryMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Выбирете теплоход</h3>
+                  <select name="branch">
+                    <option value="gd">Главный</option>
+                    <option value="dg">Вспомогательный</option>
+                  </select>
+                </div>
+                <div class="dataEntry">
+                  <h3>Наработка до капремонта</h3>
+                  <input name="factoryMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Номинальная мощность, кВт</h3>
+                  <input name="powerMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Число оборотов, об/мин</h3>
+                  <input name="powerMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Расход топлива, кг/ч</h3>
+                  <input name="fuelFlow" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Число цилиндров</h3>
+                  <input name="numberCylinders" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Расположение цилиндров</h3>
+                  <select name="cylinderPosition">
+                    <option value="v">V-образное</option>
+                    <option value="r">Рядное</option>
+                  </select>
+                </div>
+                <div class="dataEntry">
+                  <h3>Диаметр цилиндра, мм</h3>
+                  <input name="powerMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Ход поршня, мм</h3>
+                  <input name="powerMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Степень сжатия</h3>
+                  <input name="powerMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Угол впрыска</h3>
+                  <input name="powerMotor" />
+                </div>
+                <div class="dataEntry">
+                  <h3>Способ наддува</h3>
+                  <select name="branch">
+                    <option value="b">без наддува</option>
+                    <option value="t">турбонаддув</option>
+                  </select>
+                </div>
+                <div class="dataEntry">
+                  <h3>Ср. эффект. давление</h3>
+                  <input name="powerMotor" />
                 </div>
                 <div class="entry-btn">
                   <input type="submit" value="Добавить">
-                  <!-- <button class="btn btn-primary">
-                    <span class="entry-btn__text">Добавить</span>
-                  </button> -->
                 </div>
               </form>
             </div>
