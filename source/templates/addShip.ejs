@@ -11,7 +11,7 @@
                 <h3>Введите судовладельца</h3>
                   <select name="owner">
                     <% for(let t of todos) { %>
-                      <option><%= t.title %></option>
+                      <option value="<%= t._id %>"><%= t.title %></option>
                     <% } %>
                   </select>
                   <span class="onwer-plus">+</span>
