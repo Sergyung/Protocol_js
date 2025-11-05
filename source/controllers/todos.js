@@ -1,6 +1,6 @@
 import { getList } from "../models/todos.js";
 import { addItemShip, getListShip } from "../models/ships.js";
-import { addItemMotor } from "../models/motors.js";
+import { addItemMotor, getListMotor } from "../models/motors.js";
 
 export function mainPage(req, res) {
   res.render('main', {
@@ -61,4 +61,14 @@ export function addMotor(req, res) {
   }
   addItemMotor(motor);
   res.redirect('/')
+}
+
+export function addProtocol(req, res) {
+  res.render('addProtocol', {
+    todos: getList(),
+    ships: getListShip(),
+    motors: getListMotor(),
+    title:'Новый протокол'
+  });
+  // console.log(motors.purposeMotor || "пусто")
 }

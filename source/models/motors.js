@@ -4,7 +4,7 @@ const motors = database.motors;
 
 export function getListMotor() {
   
-  return ships
+  return motors
 }
 
 export function addItemMotor(motor) {

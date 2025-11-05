@@ -1,0 +1,48 @@
+<%- include('includes/header.ejs') %>
+
+<section class="content">
+        <div class="conteiner">
+          <div class="content-box">
+            <div class="content-main">
+              <h2>Добавить двигатель</h2>
+              <form action="/addMotor" method="post">
+                <div class="dataEntry">
+                <h3>Выбирете судовладельца</h3>
+                  <select name="owner">
+                    <% for(let t of todos) { %>
+                      <option value="<%= t._id %>"><%= t.title %></option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="dataEntry">
+                  <h3>Выбирете теплоход</h3>
+                  <select name="shipId">
+                    <% for(let s of ships) { %>
+                      <option value="<%= s._id %>"><%= s.nameShip %></option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="dataEntry">
+                  <h3>Выбирете двигатель</h3>
+                  <select name="motorId">
+                    <% for(let m of motors) { %>
+                      <option value="<%= m._id %>"><%= m.modelMotor %> - <%= m.numberMotor %></option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="dataEntry">
+                  <h3>Выбирете режим испытаний</h3>
+                  <% if (motors.purposeMotor === "gd") { %>
+                    <input type="button" value="E1">
+                  <% } else { %>
+                    <input type="button" value="D1">
+                    <input type="button" value="D2">
+                  <% } %>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+</section>
+
+<%- include('includes/footer.ejs') %> 
